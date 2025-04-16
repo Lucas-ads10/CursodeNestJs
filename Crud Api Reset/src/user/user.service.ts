@@ -15,4 +15,20 @@ export class UserService {
 
     }
 
+    async list() {
+        
+        return this.prisma.user.findMany();
+
+    }
+
+    async show(id: number){
+
+        return this.prisma.user.findUnique({
+            where: {
+                id
+            }
+        })
+
+    }
+
 }
