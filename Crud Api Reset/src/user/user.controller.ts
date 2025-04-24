@@ -38,9 +38,7 @@ async updatePartial(@Body() data: UpdatePatchUserDTO, @Param('id', ParseIntPipe)
 
 @Delete(':id')
 async delete (@Param('id', ParseIntPipe) id: number) {
-    return{
-        id
-    }
+    return this.userService.delete(id);
 }
 
 }
